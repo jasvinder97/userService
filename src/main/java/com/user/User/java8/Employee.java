@@ -5,8 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Builder
@@ -23,9 +23,14 @@ public class Employee {
 class driver {
     public static void main(String[] args) {
         List<Employee> employees = new ArrayList<>();
+        List<Employee> e = List.of(Employee.builder().age(23).name("Jassi").gender("M").department("Tech Team").salary(82811).build(),
+                Employee.builder().age(29).name("bassi").gender("F").department("IT").salary(98911).build());
+        e.remove(1);
+/*
+
         employees.add(Employee.builder().age(23).name("Jassi").gender("M").department("Tech Team").salary(82811).build());
-        employees.add(Employee.builder().age(29).name("Bhavana").gender("F").department("IT").salary(98911).build());
-        employees.add(Employee.builder().age(30).name("Anusha").gender("F").department("PO").salary(67543).build());
+        employees.add(Employee.builder().age(29).name("bassi").gender("F").department("IT").salary(98911).build());
+        employees.add(Employee.builder().age(30).name("vicky").gender("F").department("PO").salary(67543).build());
         employees.add(Employee.builder().age(27).name("Diku").gender("M").department("IT").salary(60000).build());
 //        print distinct departments
 //        employees.stream().map(Employee::getDepartment).distinct().forEach(System.out::println);
@@ -79,5 +84,6 @@ class driver {
                 .entrySet().stream().sorted(Collections.reverseOrder(Map.Entry.comparingByKey())).collect(Collectors.toList()).get(1));
 //        sorting the map
 
+*/
     }
 }
